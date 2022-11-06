@@ -30,6 +30,9 @@ Route::resource('transaksi', \App\Http\Controllers\TransaksiController::class)
 Route::resource('buku', \App\Http\Controllers\BukuController::class)
     ->middleware('auth');
 
+    Route::resource('member', \App\Http\Controllers\membercontroller::class)
+    ->middleware('auth');
+
 Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');

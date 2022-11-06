@@ -310,7 +310,7 @@ return [
         ],
         [
             'text' => 'Member Perpustakaan',
-            'url'  => '#',
+            'url'  => '/member',
             'icon'  => 'fa fa-users',
         ],
         ['header' => 'Kelola Buku'],
