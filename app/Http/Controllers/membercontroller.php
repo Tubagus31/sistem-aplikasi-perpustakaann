@@ -20,6 +20,14 @@ class membercontroller extends Controller
         ]);
     }
 
+    public function CetakMember()
+    {
+        $member = Member::all();
+        return view('member.index', [
+            'member' => $member
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
