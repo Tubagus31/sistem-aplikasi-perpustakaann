@@ -316,7 +316,7 @@ return [
         ['header' => 'Kelola Buku'],
         [
             'text' => 'Buku',
-            'url'  => '#',
+            'url'  => '/buku',
             'icon'  => 'fa fa-book',
         ],
 

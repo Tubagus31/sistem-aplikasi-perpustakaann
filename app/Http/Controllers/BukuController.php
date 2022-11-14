@@ -37,19 +37,17 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'Judul_Buku'=>'required'
+            'Judul_Buku'=>'required',
+            'Kode_Buku'=>'required',
+            'Penulis'=>'required',
+            'Penerbit'=>'required'
         ]);
-        $buku = new Buku([
-            'Judul_Buku' =>$request->get('Judul_Buku'),
-            'Kode_Buku' =>$request->get('Kode_Buku'),
-            'Penulis' =>$request->get('Penulis'),
-            'Penerbit' =>$request->get('Penerbit'),
-            'Status_Buku' =>$request->get('Status_Buku'),
-            'Tanggal_Terbit'=>$request->get('Tanggal_Terbit')
+        $array = $request->only([
+            'Judul_Buku', 'Kode_Buku', 'Penulis', 'Penerbit'
         ]);
-        $buku->save();
-        return view('buku.store', compact('buku'));
-        return redirect('/buku')->with('Success', 'Input berhasil');
+      
+        $buku = Buku::create($array);
+        return redirect()->route('buku.index')->with('success_message', 'Berhasil menambah buku baru');
     }
 
     /**
@@ -92,8 +90,7 @@ class BukuController extends Controller
         $buku->Kode_Buku = $request->get('Kode_Buku');
         $buku->Penulis = $request->get('Penulis');
         $buku->Penerbit = $request->get('Penerbit');
-        $buku->Status_Buku = $request->get('Status_Buku');
-        $buku->Tanggal_Terbit = $request->get('Tanggal_Terbit');
+ 
         
         $buku->save();
         return redirect('/buku')->with('Success', 'Input berhasil');

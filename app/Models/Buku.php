@@ -13,8 +13,6 @@ class Buku extends Model
         'Judul_Buku',
         'Kode_Buku',
         'Penulis',
-        'Penerbit',
-        'Status_Buku',
-        'Tanggal_Terbit'
+        'Penerbit'
        ];
 }

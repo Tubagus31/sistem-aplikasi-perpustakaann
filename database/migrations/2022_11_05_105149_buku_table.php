@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('Kode_Buku')->unique();
             $table->string('Penulis');
             $table->string('Penerbit');
-            $table->string('Status_Buku');
-            $table->date('Tanggal_Terbit');
             $table->timestamps();
     });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bukj');
+        Schema::dropIfExists('bukus');
     }
 };
